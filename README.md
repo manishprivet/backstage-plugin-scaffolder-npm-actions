@@ -1,8 +1,8 @@
-# backstage-plugin-scaffolder-git-actions package
+# backstage-plugin-scaffolder-npm-actions package
 
 This is a `npm` actions plugin for the `scaffolder-backend` in Backstage.
 
-This contains a collection of actions for using with git:
+This contains a collection of actions for using with npm:
 
 - npm:init
 - npm:install
