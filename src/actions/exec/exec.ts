@@ -34,10 +34,6 @@ export function createNpmExecAction() {
 
         const npm = getNpmCommand(ctx);
 
-        ctx.logger.info(
-          `OS platform is ${process.platform}, using '${npm}' as command`,
-        );
-
         await executeShellCommand({
           command: npm,
           args: ['exec', ...ctx.input.arguments],
