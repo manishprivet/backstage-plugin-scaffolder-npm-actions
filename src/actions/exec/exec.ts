@@ -50,6 +50,7 @@ export function createNpmExecAction() {
       } catch (err) {
         console.error(err);
         ctx.logger.error(err);
+        throw err;
       }
     },
   });
