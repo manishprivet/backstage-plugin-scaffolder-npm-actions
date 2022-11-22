@@ -7,6 +7,7 @@ This contains a collection of actions for using with npm:
 - npm:init
 - npm:install
 - npm:exec
+- npm:config
 
 ## Prerequisites
 
@@ -29,6 +30,7 @@ import {
   createNpmExecAction,
   createNpmInitAction,
   createNpmInstallAction,
+  createNpmConfigAction,
 } from '@mdude2314/backstage-plugin-scaffolder-npm-actions';
 import { ScmIntegrations } from '@backstage/integration';
 import { createBuiltinActions, createRouter } from '@backstage/plugin-scaffolder-backend';
@@ -47,6 +49,7 @@ const actions = [
     createNpmExecAction(),
     createNpmInitAction(),
     createNpmInstallAction(),
+    createNpmConfigAction(),
   ...builtInActions
 ];
 
@@ -97,9 +100,15 @@ spec:
       input:
         packageToInstall: ${{ parameters.packageToInstall }}
 
+    - id: npm-config
+      name: config
+      action: npm:config
+      input:
+        args: ${{ parameters.execArgs }}
+
     - id: npm-exec
       name: exec
       action: npm:exec
       input:
-        args: ${{ parameters.packageToInstall }}
+        args: ${{ parameters.execArgs }}
 ```

@@ -1,0 +1,1 @@
+export { createNpmConfigAction } from './config';
